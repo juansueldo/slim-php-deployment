@@ -12,7 +12,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 // Instantiate App
 $app = AppFactory::create();
-$app->setBasePath('/app');
+//s$app->setBasePath('/app');
 
 // Add error middleware
 $app->addErrorMiddleware(true, true, true);
@@ -22,7 +22,7 @@ $app->addBodyParsingMiddleware();
 
 // Routes
 $app->get('[/]', function (Request $request, Response $response) {    
-    $payload = json_encode(array('method' => 'GET', 'msg' => "Bienvenido a SlimFramework 2023"));
+    $payload = json_encode(array('method' => 'GET', 'msg' => "Bienvenido a SlimFramework 2023 UTN-FRA"));
     $response->getBody()->write($payload);
     return $response->withHeader('Content-Type', 'application/json');
 });
